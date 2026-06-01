@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "crates/carpg_core",
+    "crates/carpg_cli",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+authors = ["Mehran"]

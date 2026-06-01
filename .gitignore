@@ -1,0 +1,25 @@
+# Rust build artifacts
+/target/
+
+# Local run output and generated reports
+*.log
+*.profraw
+
+# Editor and IDE state
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
+.env.*
+
+# Temporary files
+tmp/
+temp/

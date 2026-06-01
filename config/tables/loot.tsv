@@ -1,0 +1,15 @@
+id	name	rarity	value	value_per_roughness	effect	stealth_modifier	drivetrain_modifier	repair_discount_percent	install_cost	discount_percent	black_market_eligible	primary_cargo	primary_min_roll	primary_max_roll	bonus_min_roll	bonus_max_roll
+unmarked_courier_packet	Unmarked courier packet	Common	90	0	SellOnly	0	0	0	0	0	false	Documents	0	69		
+contact_favor_voucher	Contact favor voucher	Uncommon	160	0	InstallCostVoucher	0	0	0	0	100	false	Documents	70	94		
+encrypted_client_ledger	Encrypted client ledger	Rare	320	0	SellOnly	0	0	0	0	0	false	Documents	95	99		
+crate_mismatched_sensors	Crate of mismatched sensors	Common	110	0	SellOnly	0	0	0	0	0	false	Parts	0	59		
+used_performance_intake	Used performance intake	Uncommon	210	0	VehicleUpgrade	-1	2	0	130	0	true	Parts	60	89		
+forged_ecu_module	Forged ECU module	Rare	420	0	VehicleUpgrade	-2	4	0	320	0	true	Parts	90	99		
+resealed_black_market_parcel	Resealed black-market parcel	Common	150	0	SellOnly	0	0	0	0	0	false	Contraband	0	54		
+forged_plate_kit	Forged plate kit	Uncommon	280	0	VehicleUpgrade	2	-1	0	170	0	true	Contraband	55	89		
+hidden_compartment_liner	Hidden compartment liner	Rare	520	0	VehicleUpgrade	3	-2	0	360	0	true	Contraband	90	99		
+scrap_catalytic_core	Scrap catalytic core	Common	80	20	SellOnly	0	0	0	0	0	false				0	49
+salvaged_all_terrain_tires	Salvaged all-terrain tires	Uncommon	180	20	VehicleUpgrade	-1	2	0	150	0	false				50	84
+mechanics_no_questions_chit	Mechanic's no-questions chit	Rare	260	20	InstallCostVoucher	0	0	0	0	100	false				85	99
+patchwork_cargo_screen	Patchwork cargo screen	Common	130	0	VehicleUpgrade	1	-1	0	80	0	true					
+street_coilover_set	Street coilover set	Common	140	0	VehicleUpgrade	-1	1	0	90	0	true					
