@@ -94,9 +94,9 @@ Route elements should be able to affect:
 - loot chance
 - future encounter odds
 
-Current route logic is moving into `RouteRun`. The CLI still handles presentation, but it now asks core for the next encounter preview and submits a generic route action.
+Current route logic lives in `RouteRun`. The TUI handles presentation, asks core for route state and encounter previews, and submits route actions back to core.
 
-Future route state should track:
+Route state should track:
 
 - selected car
 - selected job
@@ -107,6 +107,8 @@ Future route state should track:
 - next encounter
 - route log
 - generated loot
+
+The route model currently supports segment-by-segment traversal, deterministic segment checks, critical crash outcomes, police impound outcomes, dynamic Patrol/Fork encounter selection, backtracking, and completion reports.
 
 ## Loot Standards
 
@@ -238,22 +240,22 @@ Tests should verify game rules, not CLI formatting.
 ## Current Known Debt
 
 - `config/balance.toml` mirrors defaults but is not loaded by the game yet.
-- `RouteRun` exposes generic preview/action/resolution APIs, but the actual route sequence is still fixed to Patrol then Fork then Travel or Backtrack.
 - Installed loot has no equipment slots, stacking limits, uninstall flow, or compatibility rules yet.
 - The TUI is now the main UX path, but it is still a first pass and needs stronger layout polish, screenshots, and broader interaction testing.
 - Loot effects can now be installed as simple car upgrades, but install rules are still intentionally basic.
-- Encounter preview/resolution structs are similar but not yet unified behind a common route-run state machine.
+- Encounter preview/resolution structs are still type-specific and similar enough that shared structure may become useful as more encounter types are added.
+- Save/load is not implemented yet.
+- The route system has only two interactive encounter families, so route variety is still thin.
+- Car and job tables are intentionally small and need more content before the loop has staying power.
 
 ## Next Architecture Target
 
-Continue evolving `RouteRun` until it can fully own:
+Continue evolving `RouteRun` and the data tables until the route layer can support richer run variety:
 
-- next encounter
-- available actions
-- action preview
-- action resolution
-- route completion state
-- payout, heat, damage, and loot summary
-- arbitrary encounter sequencing
+- more encounter families
+- region/job-driven encounter weighting
+- clearer separation between route timeline data and encounter formulas
+- save/load friendly route and garage state
+- enough route outcomes to make repeated runs feel meaningfully different
 
-The CLI/TUI should eventually become a thin shell around this route-run state machine.
+The TUI should remain a thin shell around this route-run state machine.

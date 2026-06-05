@@ -6,7 +6,7 @@ These TSV files are designer-editable source data for Dead Drop Drive.
 
 Current compiled tables:
 
-- `cars.tsv`: car catalog with rarity, real/spec data, game stats, starter eligibility, and car-market eligibility.
+- `cars.tsv`: car catalog with rarity, flavor text, real/spec data, game stats, starter eligibility, and car-market eligibility.
 - `jobs.tsv`: starter contracts.
 - `loot.tsv`: canonical loot/item catalog, including sell-only loot, vehicle upgrades, vouchers, black-market eligibility, primary drop ranges, and bonus drop ranges.
 

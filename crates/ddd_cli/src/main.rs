@@ -339,7 +339,7 @@ impl App {
     fn draw_black_market(&self, frame: &mut Frame, area: Rect) {
         let rows = Layout::default()
             .direction(Direction::Vertical)
-            .constraints([Constraint::Min(10), Constraint::Length(10)])
+            .constraints([Constraint::Min(8), Constraint::Length(13)])
             .split(area);
         let columns = Layout::default()
             .direction(Direction::Horizontal)
@@ -2170,7 +2170,38 @@ fn car_performance_lines(car: &Car) -> Vec<Line<'static>> {
 }
 
 fn car_trade_lines(car: &Car) -> Vec<Line<'static>> {
-    let mut lines = car_performance_lines(car);
+    let effective = car.effective_stats();
+    let mut lines = vec![
+        Line::from(vec![
+            Span::raw(format!("{} ", car.name)),
+            rarity_badge(car.rarity, false),
+        ]),
+        Line::from(car.flavor.clone()),
+        Line::from(""),
+        compact_stat_line(
+            "Cargo",
+            car.cargo_capacity.to_string(),
+            "Stealth",
+            effective.stealth.to_string(),
+        ),
+        compact_stat_line(
+            "Drive",
+            format!("{:+}", effective.drivetrain),
+            "Cond",
+            format!("{}%", car.condition.average()),
+        ),
+        compact_stat_line(
+            "Repair",
+            format!("${}", car.repair_cost()),
+            "Mods",
+            car.installed_upgrades.len().to_string(),
+        ),
+        Line::from(format!("Value ${} | {:?}", car.value, car.drivetrain)),
+        Line::from(format!(
+            "{} {} | {}",
+            car.spec.engine.horsepower, "hp", car.spec.transmission
+        )),
+    ];
     lines.push(Line::from(""));
     lines.push(subdued_line(format!(
         "{} {} | {}",

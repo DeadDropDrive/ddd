@@ -137,6 +137,7 @@ impl PartDamage {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Car {
     pub name: String,
+    pub flavor: String,
     pub rarity: LootRarity,
     pub model_year: u16,
     pub value: i32,
@@ -151,6 +152,7 @@ pub struct Car {
 impl Car {
     pub fn new(
         name: impl Into<String>,
+        flavor: impl Into<String>,
         rarity: LootRarity,
         model_year: u16,
         value: i32,
@@ -161,6 +163,7 @@ impl Car {
     ) -> Self {
         Self {
             name: name.into(),
+            flavor: flavor.into(),
             rarity,
             model_year,
             value,

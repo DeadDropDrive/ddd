@@ -671,6 +671,7 @@ mod tests {
     fn rough_terrain_can_damage_a_two_wheel_drive_car() {
         let mut car = Car::new(
             "Old Sedan",
+            "A tired sedan with just enough dignity left to be useful.",
             crate::loot::LootRarity::Common,
             1996,
             700,
@@ -719,6 +720,7 @@ mod tests {
     fn successful_jobs_pay_full_payout() {
         let mut car = Car::new(
             "Old 4x4",
+            "A battered four-wheel-drive box for jobs where roads are only rumors.",
             crate::loot::LootRarity::Common,
             1994,
             1200,

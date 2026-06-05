@@ -1,7 +1,7 @@
 [workspace]
 members = [
-    "crates/carpg_core",
-    "crates/carpg_cli",
+    "crates/ddd_core",
+    "crates/ddd_cli",
 ]
 resolver = "2"
 

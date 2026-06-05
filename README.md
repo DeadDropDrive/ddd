@@ -28,7 +28,10 @@ The Rust package names are:
 - `ddd_core`: pure simulation and game rules.
 - `ddd_cli`: terminal UI and input handling.
 
-The crate directories still use the original prototype paths under `crates/carpg_core` and `crates/carpg_cli`. The package names are the source of truth for Cargo commands.
+The crate directories are:
+
+- `crates/ddd_core`
+- `crates/ddd_cli`
 
 ## Requirements
 
@@ -80,7 +83,7 @@ The build script in `ddd_core` reads these tables at compile time and generates 
 
 ## Balance
 
-Game tuning constants live in the `ddd_core` package at `crates/carpg_core/src/balance.rs`.
+Game tuning constants live in the `ddd_core` package at `crates/ddd_core/src/balance.rs`.
 
 `config/balance.toml` mirrors the current defaults for design review. The game does not load the TOML file yet; external balance loading is future work.
 
@@ -98,6 +101,10 @@ cargo test
 ## System Standards
 
 Design and implementation rules for extending loot, encounters, routes, balance, vehicles, and presentation live in `docs/SYSTEM_STANDARDS.md`.
+
+## First Milestone
+
+The current target is `v0.1`: a complete playable garage-to-route prototype. Scope is tracked in `docs/MILESTONE_V0_1.md`.
 
 ## License
 
